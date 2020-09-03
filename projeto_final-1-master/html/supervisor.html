@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
+    <title>Schedule System - Supervisor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script type="text/javascript" src="..\js\supervisor.js"></script>
+</head>
+
+<body onload="exibirUsuario()">
+   
+    <br><br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-sm-3 col-xs-3 div1">
+                <div align="center"><img src="..\img\itau.png" width="50%" height="50%" alt="atributo"></div>
+            </div>
+            <div class="col-md-8 col-sm-3 col-xs-3  div1">
+                <a href="solicitacoes.html"><button type="button" >Nova Solicitação</button></a>
+            </div>
+            <div class="col-md-8 col-sm-3 col-xs-3  div1">
+                <a href="index.html"><button type="button" >Pagina inicial</button></a>
+            </div>
+            <div class="col-md-8 col-sm-3 col-xs-3  div1">
+                <button onclick="deslogar()" type="button" class="btn btn-warning">Logout</button>
+            </div>
+        </div>  
+
+        <div class="row">
+            <div id="foto" class="col-2">
+            </div>
+            <div id="dados" class="col-8">
+            </div>
+        </div>  
+        <br><br><br>
+        <fieldset>
+        <legend align="center"><b>Filtro</b> </legend>
+        <div class="row">
+            <div class="col-6" align="right">
+            <select id="cbostatus">
+                <option value="0">TODOS</option>
+                <option value="1">INICIAL</option>
+                <option value="2">APROVADA</option>
+                <option value="3">NEGADA</option>
+                <option value="4">CANCELADA</option>
+            </select>
+            </div>
+            <div class="col-4" align="left">
+                <input type="button" onclick="carregarSolicitacoesStatus()" value="Filtrar" >
+
+            </div>
+        </div>
+        </fieldset>
+        <br><br><br><br>
+        <div id="solicitacoes" class="col-12">
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
