@@ -12,16 +12,16 @@ function exibirUsuario(){
 
 function deslogar(){
     localStorage.removeItem("user");
-    window.location="../html/index.html"
+    window.location="../html/login.html"
 }
 
 function preencherTabela(lista){
 
     var tabela=
     "<div class='row'>" +
-    "<div class='col-12'>" +
-    "<table border='1' align='center' width='80%' cellspacing='2'>" + 
-    "<tr>" + 
+    "<div class='col-md-12 col-sm-12 col-xs-12'>" +
+    "<table border='2' align='center' width='100%' cellspacing='2' style='font-size: 70%'>" + 
+    "<tr width='100%'>" + 
     "<th>Tecnico</th>" +
     "<th>Operadora</th>" + 
     "<th>Pdv</th>" +
@@ -42,15 +42,15 @@ function preencherTabela(lista){
             status = "CANCELADA";
         }
         tabela+=
-            "<tr>" +
-            "<td>" + lista[cont].nomeTec + "</td>" + 
-            "<td>" + lista[cont].operadora + "</td>" + 
-            "<td>" + lista[cont].pdvId.numPonto + " - " + lista[cont].pdvId.nome + "</td>" +  
-            "<td>" + lista[cont].data+ " / " + lista[cont].hora + "</td>" +
-            "<td>" + status + "</td>" + 
-            "<td>" +    "<button type='button' class='btn btn-success' onclick='autorizar("+lista[cont].numSeq+")'>Autorizar</button>" +
-                        "<button type='button' class='btn btn-warning' onclick='negar("+lista[cont].numSeq+")'>Negar</button>" +
-                        "<button type='button' class='btn btn-danger'  onclick='cancelar("+lista[cont].numSeq+")'>Cancelar</button>" +
+            "<tr width='100%'>" +
+            "<td style='font-size: 100%'>" + lista[cont].nomeTec + "</td>" + 
+            "<td style='font-size: 100%'>" + lista[cont].operadora + "</td>" + 
+            "<td style='font-size: 100%'>" + lista[cont].pdvId.numPonto + " - " + lista[cont].pdvId.nome + "</td>" +  
+            "<td style='font-size: 100%'>" + lista[cont].data+ " / " + lista[cont].hora + "</td>" +
+            "<td style='font-size: 100%'>" + status + "</td>" + 
+            "<td>" +    "<button type='button' width='25%' class='btn btn-success' style='font-size: 100%' onclick='autorizar("+lista[cont].numSeq+")'>Autorizar</button>" +
+                        "<button type='button' width='25%' class='btn btn-warning' style='font-size: 100%' onclick='negar("+lista[cont].numSeq+")'>Negar</button>" +
+                        "<button type='button' width='25%' class='btn btn-danger'  style='font-size: 100%' onclick='cancelar("+lista[cont].numSeq+")'>Cancelar</button>" +
             "</td>"+
             "</tr>";
     }
@@ -93,7 +93,7 @@ function autorizar(solicitacao){
     fetch("http://localhost:8080/solicitacao/atualizarstatus", cabecalho)
         .then(res => res.json())
         .then(res => {
-            window.alert("atualizado com sucesso");
+            window.alert("SMS enviado - Prosseguir");
             carregarSolicitacoes();
         })
         .catch(err => {
@@ -120,7 +120,7 @@ function negar(solicitacao){
     fetch("http://localhost:8080/solicitacao/atualizarstatus", cabecalho)
         .then(res => res.json())
         .then(res => {
-            window.alert("atualizado com sucesso");
+            window.alert("SMS enviado - Solicitação negada");
             carregarSolicitacoes();
         })
         .catch(err => {
@@ -147,7 +147,7 @@ function cancelar(solicitacao){
     fetch("http://localhost:8080/solicitacao/atualizarstatus", cabecalho)
         .then(res => res.json())
         .then(res => {
-            window.alert("atualizado com sucesso");
+            window.alert("SMS enviado - Solicitação cancelada");
             carregarSolicitacoes();
         })
         .catch(err => {

@@ -1,42 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
 <head>
-    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
-    <title>Schedule System - Supervisor</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script type="text/javascript" src="..\js\login.js"></script>
+  <meta charset="UTF-8" />
+  <title>Login do Supervisor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script type="text/javascript" src="..\js\login.js"></script>
 </head>
 <body>
-    <br><br><br>
-    <div class="container-fluid">
+  <div class="container" >
+    <div class="content">      
+        <!--FORMULÁRIO DE LOGIN-->
+        <div id="login">
+    <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 div1">
+    <!--<a class="links" id="paracadastro"></a>-->
+    <a class="links" id="paralogin"></a>
         <div class="row">
-            <div class="col-md-12">
-                <form role="form">
-                    <div align="center"><img src="..\img\itau.png" width="10%" height="10%" alt="atributo"></div>
-
-                    <h2 align="center" id="titulo"> Disponibilização de links nos Pontos de Vendas Itaú </h2>
-                    <h2 align="center" id="titulo"> Login do Supervisor </h2>
-
-                    <div class="form-group">
-                         
-                        <label for="txtemail">
-                            Email ou racf
-                        </label>
-                        <input type="text" class="form-control" id="txtusuario" />
-                    </div>
-                    <div class="form-group">
-                         
-                        <label for="txtsenha">
-                            Senha
-                        </label>
-                        <input type="password" class="form-control" id="txtsenha" />
-                    </div>
-                    <button onclick="logar()" type="button" class="btn btn-warning">SIGN IN</button>
-                </form>
+            <div class="col-md-5 col-sm-5 col-xs-3">
+                <img src="../img/itau.png" width="100%" height="100%" alt="atributo" align="left">
             </div>
+            <div class="col-md-7 col-sm-7 col-xs-4" style="margin-top: 20px">
+                <a href="index.html">            
+                    <p>  
+                        <input type="button" value="Pagina inicial" /> 
+                      </p>  
+                </a>
+            </div>
+            <div class="col-md-5 col-sm-4 col-xs-5">
+            
         </div>
+        </div>
+        <form method="post" action=""> 
+               <h1>Login do Supervisor</h1> 
+          <p> 
+            <label for="txtemail">Email ou racf</label>
+            <input id="txtusuario" name="txtusuario" required="required" type="text" placeholder="ex. contato@htmlecsspro.com"/>
+          </p>
+           
+          <p> 
+            <label for="txtsenha">Senha</label>
+            <input id="txtsenha" name="senha" required="required" type="password" placeholder="ex. senha" /> 
+          </p>        
+           
+          <p> 
+            <input type="button" value="Logar"  onclick="logar()"/> 
+          </p>           
+          
+        </form>
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</div>
+       
+    </div>
+  </div>  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
